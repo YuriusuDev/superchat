@@ -45,10 +45,10 @@ const App = () => {
       photoURL: user.photoURL,
       text
     });
+    setText("");
   };
 
   useEffect(() => {
-    setText("");
     setTimeout(async () => await dummy.current?.scrollIntoView({behavior: "smooth"}), 0);
   }, [messages]);
 
@@ -66,7 +66,7 @@ const App = () => {
               {messages && messages.map((data) => (
                 <div className={`data ${(user.uid == data.uid) ? "data-sent" : "data-received"}`} key={data.time}>
                   <img className="data_photo" src={data.photoURL}/>
-                  <p className="data_text" dangerouslySetInnerHTML={{__html: data.text.replace("\n", "<br/>")}}></p>
+                  <p className="data_text" dangerouslySetInnerHTML={{__html: data.text.replaceAll("\n", "<br/>")}}></p>
                 </div>
               ))}
               <div ref={dummy}></div>
