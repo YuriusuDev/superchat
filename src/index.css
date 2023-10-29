@@ -18,14 +18,13 @@ body {
   height: 56px;
   padding: 8px;
   background-color: #263238;
-  box-shadow: 0 0 4px 0 rgba(0,0,0, 0.14), 0 3px 4px 0 rgba(0,0,0, 0.12), 0 1px 5px 0 rgba(0,0,0, 0.20);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0, 0.14), 0 4px 5px 0 rgba(0,0,0, 0.12), 0 1px 10px 0 rgba(0,0,0, 0.20);
 }
 
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
   height: 48px;
   width: 48px;
   color: #ffffff;
@@ -54,6 +53,10 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  transition: background-color 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .sign-out:hover {
@@ -87,6 +90,10 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  transition: box-shadow 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .sign-in:hover {
@@ -124,12 +131,12 @@ body {
 }
 
 .data .data_photo {
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
   border-radius: 50%;
   height: 48px;
   width: 48px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
 .data .data_text {
@@ -193,6 +200,10 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  transition: background-color 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .submit:hover {
