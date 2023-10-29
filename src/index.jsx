@@ -27,7 +27,7 @@ const firestore = getFirestore(firebase);
 getAnalytics(firebase);
 
 const App = () => {
-  const dummy = useRef(null);
+  const scrollElement = useRef(null);
 
   const [user] = useAuthState(authentication);
   const messagesReference = collection(firestore, "messages");
@@ -49,7 +49,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    setTimeout(async () => await dummy.current?.scrollIntoView({behavior: "smooth"}), 0);
+    setTimeout(async () => await scrollElement.current?.scrollIntoView({behavior: "smooth"}), 0);
   }, [messages]);
 
   return (
@@ -60,23 +60,6 @@ const App = () => {
         {user && <button className="sign-out material-symbols-outlined" onClick={userSignOut}>logout</button>}
       </header>
       <section className="section">
-        {user && (
-          <>
-            <main className="main">
-              {messages && messages.map((data) => (
-                <div className={`data ${(user.uid == data.uid) ? "data-sent" : "data-received"}`} key={data.time}>
-                  <img className="data_photo" src={data.photoURL}/>
-                  <p className="data_text" dangerouslySetInnerHTML={{__html: data.text.replaceAll("\n", "<br/>")}}></p>
-                </div>
-              ))}
-              <div ref={dummy}></div>
-            </main>
-            <form className="form" onSubmit={sendText}>
-              <textarea className="textarea" type="text" placeholder="Message" autoFocus value={text} onChange={alterText}></textarea>
-              <button className="submit material-symbols-outlined" type="submit" disabled={!text}>send</button>
-            </form>
-          </>
-        )}
         {!user && (
           <button className="sign-in" onClick={userSignIn}>
             <i className="sign-in_icon">
@@ -92,6 +75,23 @@ const App = () => {
             </i>
             <span className="sign-in_text">Sign in with Google</span>
           </button>
+        )}
+        {user && (
+          <>
+            <main className="main">
+              {messages && messages.map((data) => (
+                <div className={`data ${(user.uid == data.uid) ? "data-sent" : "data-received"}`} key={data.time}>
+                  <img className="data_photo" src={data.photoURL}/>
+                  <p className="data_text" dangerouslySetInnerHTML={{__html: data.text.replaceAll("\n", "<br/>")}}></p>
+                </div>
+              ))}
+              <div ref={scrollElement}></div>
+            </main>
+            <form className="form" onSubmit={sendText}>
+              <textarea className="textarea" type="text" placeholder="Message" autoFocus value={text} onChange={alterText}></textarea>
+              <button className="submit material-symbols-outlined" type="submit" disabled={!text}>send</button>
+            </form>
+          </>
         )}
       </section>
     </React.StrictMode>

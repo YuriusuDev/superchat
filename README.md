@@ -1,12 +1,12 @@
 # Superchat
 
-A realtime chat app using these tools:
+A realtime chat app using the following tools:
 
 * [**Vite**](https://vitejs.dev) - Fast web app development build tool.
 * [**React**](https://react.dev) - Dynamic and interactive user interface.
 * [**Firebase**](https://firebase.google.com) - Cloud database and hosting solution.
 
-Based on Fireship's React & Firebase chat app.
+Based on Fireship's React & Firebase chat app:
 
 [![](http://img.youtube.com/vi/zQyrwxMPm88/0.jpg)](https://www.youtube.com/watch?v=zQyrwxMPm88)
 
@@ -23,6 +23,7 @@ Run **`npm install`** to install missing dependencies.
 * **Setup** - [https://firebase.google.com/docs/web/setup](https://firebase.google.com/docs/web/setup)
 * **Authentication** - [https://firebase.google.com/docs/auth/web/start](https://firebase.google.com/docs/auth/web/start)
 * **Firestore** - [https://firebase.google.com/docs/firestore/quickstart](https://firebase.google.com/docs/firestore/quickstart)
+* **Hosting** - [https://firebase.google.com/docs/hosting/quickstart](https://firebase.google.com/docs/hosting/quickstart)
 
 Use Vite's [**`.env`**](https://vitejs.dev/guide/env-and-mode.html#env-files) file feature to access the app configuration with the corresponding environment variables:
 
