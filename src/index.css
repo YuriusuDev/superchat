@@ -57,6 +57,7 @@ body {
   -moz-user-select: none;
   -webkit-user-select: none;
   transition: background-color 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .sign-out:hover {
@@ -94,6 +95,7 @@ body {
   -moz-user-select: none;
   -webkit-user-select: none;
   transition: box-shadow 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .sign-in:hover {
@@ -204,6 +206,7 @@ body {
   -moz-user-select: none;
   -webkit-user-select: none;
   transition: background-color 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .submit:hover {
@@ -216,5 +219,6 @@ body {
 
 .submit:disabled {
   pointer-events: none;
+  background-color: transparent;
   color: rgba(38,50,56, 0.38);
 }
