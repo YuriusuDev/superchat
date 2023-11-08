@@ -3,7 +3,7 @@ node_modules/
 
 # Vite
 build/
-.env
+.env*
 
 # Firebase
 .firebase/
