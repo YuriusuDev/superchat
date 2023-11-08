@@ -100,6 +100,6 @@ const App = () => {
 
 ReactDOM.createRoot(document.querySelector(".app")).render(<App/>);
 
-if (!import.meta.env.DEV && "serviceWorker" in navigator) {
-  (await navigator.serviceWorker.ready).unregister();
+if ("serviceWorker" in navigator) {
+  await (await navigator.serviceWorker.ready).unregister();
 }
