@@ -1,7 +1,7 @@
 {
   "name": "Superchat",
   "short_name": "Superchat",
-  "start_url": ".",
+  "start_url": "./",
   "theme_color": "#263238",
   "background_color": "#ffffff",
   "display": "standalone",
