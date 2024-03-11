@@ -6,6 +6,5 @@ build/
 .env*
 
 # Firebase
-.firebase/
-.firebaserc
-firebase.json
+.firebase*
+firebase*
