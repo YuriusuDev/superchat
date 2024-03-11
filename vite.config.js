@@ -5,23 +5,21 @@ export default defineConfig({
   root: "src",
   base: "./",
   envDir: "../",
-  envPrefix: "VITE",
+  envPrefix: "ENV",
   publicDir: false,
   plugins: [
-    {transformIndexHtml: (html) => html.replace(/(script.*) crossorigin (.*)/, "$1 defer $2")},
     react()
   ],
   build: {
     target: "esnext",
+    minify: "esbuild",
     outDir: "../build",
-    assetsDir: ".",
     assetsInlineLimit: 0,
     emptyOutDir: true,
     copyPublicDir: false,
     sourcemap: false,
     modulePreload: false,
     write: true,
-    minify: "esbuild",
     rollupOptions: {
       output: {
         entryFileNames: "[name].js",

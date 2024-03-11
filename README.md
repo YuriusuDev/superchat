@@ -28,11 +28,11 @@ Run **`npm install`** to install missing dependencies.
 Use Vite's [**`.env`**](https://vitejs.dev/guide/env-and-mode.html#env-files) file feature to access the app configuration with the corresponding environment variables:
 
 ```
-VITE_FIREBASE_API_KEY
-VITE_FIREBASE_AUTH_DOMAIN
-VITE_FIREBASE_PROJECT_ID
-VITE_FIREBASE_STORAGE_BUCKET
-VITE_FIREBASE_MESSAGING_SENDER_ID
-VITE_FIREBASE_APP_ID
-VITE_FIREBASE_MEASUREMENT_ID
+ENV_FIREBASE_API_KEY
+ENV_FIREBASE_AUTH_DOMAIN
+ENV_FIREBASE_PROJECT_ID
+ENV_FIREBASE_STORAGE_BUCKET
+ENV_FIREBASE_MESSAGING_SENDER_ID
+ENV_FIREBASE_APP_ID
+ENV_FIREBASE_MEASUREMENT_ID
 ```
