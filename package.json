@@ -1,20 +1,30 @@
 {
   "name": "superchat",
+  "author": "Yuriusu",
+  "license": "ISC",
+  "homepage": "https://github.com/yuriusudev/superchat#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuriusudev/superchat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yuriusudev/superchat/issues"
+  },
+  "keywords": [
+    "chat"
+  ],
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "vite dev",
-    "build": "vite build",
-    "serve": "vite preview"
+    "start": "node esbuild.js"
   },
   "dependencies": {
-    "firebase": "^10.8.1",
+    "firebase": "^10.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.1",
-    "vite": "^4.5.2"
+    "esbuild": "^0.20.2"
   }
 }

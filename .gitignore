@@ -1,9 +1,8 @@
 # NPM
 node_modules/
 
-# Vite
-build/
-.env*
+# ESBuild
+public/
 
 # Firebase
 .firebase*
