@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from "react";
+import {StrictMode, useEffect, useState, useRef} from "react";
 import ReactDOM from "react-dom/client";
 
 import {initializeApp} from "firebase/app";
@@ -8,18 +8,14 @@ import {getAnalytics} from "firebase/analytics";
 import {useAuthState} from "react-firebase-hooks/auth";
 import {useCollectionData} from "react-firebase-hooks/firestore";
 
-import "./icon.svg?url";
-import "./icon-192x192.png?url";
-import "./icon-512x512.png?url";
-
 const firebase = initializeApp({
-  apiKey: import.meta.env.ENV_FIREBASE_API_KEY,
-  authDomain: import.meta.env.ENV_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.ENV_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.ENV_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.ENV_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.ENV_FIREBASE_APP_ID,
-  measurementId: import.meta.env.ENV_FIREBASE_MEASUREMENT_ID
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID
 });
 const authentication = getAuth(firebase);
 const firestore = getFirestore(firebase);
@@ -87,7 +83,7 @@ const App = () => {
   }, [messages]);
 
   return (
-    <React.StrictMode>
+    <StrictMode>
       <header className="header">
         <i className="logo material-icons">forum</i>
         <h1 className="title">{user ? "Conversations" : "Superchat"}</h1>
@@ -96,7 +92,7 @@ const App = () => {
       <section className="section">
         {!user ? <SignIn/> : <Conversations/>}
       </section>
-    </React.StrictMode>
+    </StrictMode>
   );
 };
 
