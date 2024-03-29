@@ -50,7 +50,6 @@ const App = () => {
   return (
     <StrictMode>
       <header className="header">
-        <i className="logo material-icons">forum</i>
         <h1 className="title">{user ? "Conversations" : "Superchat"}</h1>
         {user && <button className="sign-out material-icons" onClick={userSignOut}>logout</button>}
       </header>
