@@ -11,7 +11,7 @@ const esbuild = await context({
     "FIREBASE_MEASUREMENT_ID": "''"
   },
   entryPoints: [
-    "./src/*"
+    "./source/*"
   ],
   loader: {
     ".html": "copy",
@@ -40,5 +40,10 @@ const esbuild = await context({
 });
 
 await esbuild.watch();
-const {host, port} = await esbuild.serve();
+
+const {host, port} = await esbuild.serve({
+  servedir: "public",
+  fallback: "public/index.html"
+});
+
 console.table({Server: `http://${host}:${port}`});
