@@ -1,3 +1,5 @@
+<img src="./source/icon.svg" width="64px" height="64px" align="right"/>
+
 # Superchat
 
 Realtime chat application using the following tools:
@@ -6,15 +8,19 @@ Realtime chat application using the following tools:
 * [**React**](https://react.dev) - Dynamic and interactive user interface.
 * [**Firebase**](https://firebase.google.com) - Cloud database and hosting solution.
 
-Based on Fireship's React & Firebase chat app:
-
-[![](http://img.youtube.com/vi/zQyrwxMPm88/0.jpg)](https://www.youtube.com/watch?v=zQyrwxMPm88)
+> [!Tip]
+> Based on Fireship's React & Firebase chat application:
+>
+> [![](http://img.youtube.com/vi/zQyrwxMPm88/0.jpg)](https://www.youtube.com/watch?v=zQyrwxMPm88)
 
 ## Command Scripts
 
 Run **`npm install`** to install missing dependencies.
 
-* **`npm start`** - Starts the app and watch over file changes.
+- **`npm start`** - Starts the app and watch over file changes.
+- **`npm run build`** - Generate the production build with ESBuild.
+- **`npm run clean`** - Removes the generated build files.
+- **`npm run deploy`** - Deploy and host to Firebase.
 
 ## Firebase API
 
@@ -23,14 +29,16 @@ Run **`npm install`** to install missing dependencies.
 * **Firestore** - [https://firebase.google.com/docs/firestore/quickstart](https://firebase.google.com/docs/firestore/quickstart)
 * **Hosting** - [https://firebase.google.com/docs/hosting/quickstart](https://firebase.google.com/docs/hosting/quickstart)
 
-Use ESBuild's [**`define`**](https://esbuild.github.io/api/#define) option to access the app configuration:
+Define the corresponding Firebase configuration by creating the `server/variables.json` file:
 
-```
-FIREBASE_API_KEY
-FIREBASE_AUTH_DOMAIN
-FIREBASE_PROJECT_ID
-FIREBASE_STORAGE_BUCKET
-FIREBASE_MESSAGING_SENDER_ID
-FIREBASE_APP_ID
-FIREBASE_MEASUREMENT_ID
+```json
+{
+  "FIREBASE_API_KEY": "'...'",
+  "FIREBASE_AUTH_DOMAIN": "'...'",
+  "FIREBASE_PROJECT_ID": "'...'",
+  "FIREBASE_STORAGE_BUCKET": "'...'",
+  "FIREBASE_MESSAGING_SENDER_ID": "'...'",
+  "FIREBASE_APP_ID": "'...'",
+  "FIREBASE_MEASUREMENT_ID": "'...'"
+}
 ```

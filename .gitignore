@@ -4,6 +4,9 @@ node_modules/
 # ESBuild
 public/
 
+# Server
+server/variables.json
+
 # Firebase
 .firebase*
 firebase*
